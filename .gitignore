@@ -1,4 +1,4 @@
-# Ignore everything except top level folders and their content
+# Ignore everything except top level folders
 *
 !*/
 !*/**
@@ -10,6 +10,7 @@
 # Ignore tikz folder externalization folder
 tikz/
 
-# Allow git files
+.DS_Store
+
 !.gitignore
-!README.md
+!.README.md

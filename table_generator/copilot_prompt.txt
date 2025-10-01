@@ -1,0 +1,92 @@
+see the json representation for this grammar: 
+
+{
+  "reductions": {
+    "r1": {"driver": "S", "body": "BAS"},
+    "r2": {"driver": "S", "body": "\\epsilon"},
+    "r3": {"driver": "B", "body": "AS"},
+    "r4": {"driver": "B", "body": "ab"},
+    "r5": {"driver": "A", "body": "BSS"},
+    "r6": {"driver": "A", "body": "ba"}
+  },
+  "first_follow_set":{
+    "S": {
+      "first": ["a", "b"],
+      "follow": ["\\$", "a"],
+      "nullable": true
+    },
+    "A": {
+      "first": ["a", "b"],
+      "follow": ["\\$"],
+      "nullable": false
+    }, 
+    "B": {
+      "first": ["a", "b"],
+      "follow": ["\\$"],
+      "nullable": false
+    }
+  },
+  "parsing_table": {
+    "s0": { "a": ["s4", "r2"], "b": ["s5", "r2"], "\\$": ["r2"], "A": ["2"], "B": ["3"], "S": ["1"] },
+    "s1": { "\\$": ["acc"] },
+    "s2": { "a": ["s4", "r2"], "b": ["s5", "r2"], "\\$": ["r2"], "A": ["2"], "B": ["3"], "S": ["6"] },
+    "s3": { "a": ["s4", "r2"], "b": ["s5", "r2"], "\\$": ["r2"], "A": ["8"], "B": ["3"], "S": ["7"] },
+    "s4": { "b": ["s9"] },
+    "s5": { "a": ["s10"] },
+    "s6": { "a": ["r3"], "b": ["r3"], "\\$": ["r3"] },
+    "s7": { "a": ["s4", "r2"], "b": ["s5", "r2"], "\\$": ["r2"], "A": ["2"], "B": ["3"], "S": ["11"] },
+    "s8": { "a": ["s4", "r2"], "b": ["s5", "r2"], "\\$": ["r2"], "A": ["2"], "B": ["3"], "S": ["12"] },
+    "s9": { "a": ["r4"], "b": ["r4"], "\\$": ["r4"] },
+    "s10": { "a": ["r6"], "b": ["r6"], "\\$": ["r6"] },
+    "s11": { "a": ["r1"], "b": ["r1"], "\\$": ["r1"] },
+    "s12": { "a": ["r5"], "b": ["r5"], "\\$": ["r5"] }
+  },
+
+  "format":{
+    "transform_reductions":{
+      "r1" : "r2",
+      "r2" : "r3",
+      "r3" : "r4",
+      "r4" : "r5",
+      "r5" : "r6",
+      "r6" : "r1"
+    },
+    "transform_states":{
+      "s0": "s1",
+      "s1": "s2",
+      "s2": "s3",
+      "s3": "s4",
+      "s4": "s5",
+      "s5": "s6",
+      "s6": "s7",
+      "s7": "s8",
+      "s8": "s9",
+      "s9": "s10",
+      "s10": "s11",
+      "s11": "s12",
+      "s12": "s0"
+    },
+    "column_order": ["a", "b", "\\$", "A", "B", "S"]
+  }
+}
+
+
+Ignore the fact that first_follow are maybe non true and the parsing table could be wrong. Just focus on the format. In the following prompts, I will provide you with an html table for first_follow_nullables and the lr0 parsing table. You should convert it to this format. 
+
+Remember to escape the $ and follow the following rules: 
+
+In the state/reduction convertion just put the unity conversion as 
+
+rx : rx 
+or 
+sx: sx 
+
+Make sure that 
+Each goto instruction is only a number
+Each shift instruction is "s" followed by a number (lowercase) 
+Each automata state is "s" followed by a number (lowercase)
+Each reduction instruction or reduction name is "r" followed by a number (lowercase)
+
+Try to order columns in a sensed way (e.g. non terminals in alphabetical order then non terminals S then non terminals in alphabetical order)
+in the first_follow entry, please just consider the symbol, first set, follow set and nullable entries in the html table, if there are any other please ignore them
+the reduction and driver body will end up in latex math environment so if there are special characters format the accordingly. the same is true for the column_order entries and the relative keys in the parsing_table lines

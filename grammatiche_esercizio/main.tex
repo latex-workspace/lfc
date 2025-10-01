@@ -1,0 +1,93 @@
+%&../../.preamble
+\endofdump
+
+\usetikzlibrary{external}
+\tikzset{external/system call={pdflatex --shell-escape --fmt=../.preamble --halt-on-error -jobname "\image" "\endofdump\texsource"}}
+\tikzexternalize[prefix=tikz/]
+
+\title{Grammatiche esercizio}
+\author{Marini Mattia}
+\date{$ 2^o $ semestre $ 3^o $ anno}
+
+\begin{document}
+\maketitle
+
+\section{Grammar 1}
+\input{|"scripts/free-lang-util -f scripts/grammars/g1.txt --latex"}
+
+\section{Grammar 2}
+\input{|"scripts/free-lang-util -f scripts/grammars/g2.txt --latex"}
+
+\section{Grammar 3}
+\input{|"scripts/free-lang-util -f scripts/grammars/g3.txt --latex"}
+
+\section{Grammar 4}
+\input{|"scripts/free-lang-util -f scripts/grammars/g4.txt --latex"}
+
+\section{Grammar 5}
+\input{|"scripts/free-lang-util -f scripts/grammars/g5.txt --latex"}
+
+\section{Grammar 6}
+\input{|"scripts/free-lang-util -f scripts/grammars/g6.txt --latex"}
+
+\section{Grammar 7}
+\input{|"scripts/free-lang-util -f scripts/grammars/g7.txt --latex"}
+
+\section{Grammar 8}
+\input{|"scripts/free-lang-util -f scripts/grammars/g8.txt --latex"}
+
+\section{Grammar 9}
+\input{|"scripts/free-lang-util -f scripts/grammars/g9.txt --latex"}
+
+\section{Grammar 10}
+\input{|"scripts/free-lang-util -f scripts/grammars/g10.txt --latex"}
+
+\section{Grammar 11}
+\input{|"scripts/free-lang-util -f scripts/grammars/g11.txt --latex"}
+
+\section{Grammar 12}
+\input{|"scripts/free-lang-util -f scripts/grammars/g12.txt --latex"}
+
+\section{Grammar 13}
+\input{|"scripts/free-lang-util -f scripts/grammars/g13.txt --latex"}
+
+{
+	\def\parsingTablesFontSize{\tiny}
+	\section{Grammar 14}
+	\input{|"scripts/free-lang-util -f scripts/grammars/g14.txt --latex"}
+}
+
+\section{Grammar 15}
+\input{|"scripts/free-lang-util -f scripts/grammars/g15.txt --latex"}
+
+\section{Grammar 16}
+\input{|"scripts/free-lang-util -f scripts/grammars/g16.txt --latex"}
+
+\section{Grammar 17}
+\input{|"scripts/free-lang-util -f scripts/grammars/g17.txt --latex"}
+
+\section{Grammar 18}
+\input{|"scripts/free-lang-util -f scripts/grammars/g18.txt --latex"}
+
+\section{Grammar 19}
+\input{|"scripts/free-lang-util -f scripts/grammars/g19.txt --latex"}
+
+\section{Grammar 20}
+\input{|"scripts/free-lang-util -f scripts/grammars/g20.txt --latex"}
+
+\section{Grammar 21}
+\input{|"scripts/free-lang-util -f scripts/grammars/g21.txt --latex"}
+
+\section{Grammar 22}
+\input{|"scripts/free-lang-util -f scripts/grammars/g22.txt --latex"}
+
+\section{Grammar 23}
+\input{|"scripts/free-lang-util -f scripts/grammars/g23.txt --latex"}
+
+\section{Grammar 24}
+\input{|"scripts/free-lang-util -f scripts/grammars/g24.txt --latex"}
+
+
+
+\end{document}
+

@@ -1,0 +1,3 @@
+S -> b A | a B .
+A -> b A A | a S | a | b B B .
+B -> b | S B .
